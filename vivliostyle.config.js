@@ -1,13 +1,13 @@
 module.exports = {
   title: 'my-report-template', // populated into `publication.json`, default to `title` of the first entry or `name` in `package.json`.
   author: 'yas-ako <105139975+yas-ako@users.noreply.github.com>', // default to `author` in `package.json` or undefined.
-  // language: 'ja', // default to undefined.
-  // size: 'A4', // paper size.
+  language: 'ja', // default to undefined.
+  size: 'A4', // paper size.
   theme: '@vivliostyle/theme-academic@^2.0.0', // .css or local dir or npm package. default to undefined.
   entry: [
     'manuscript.md', // `title` is automatically guessed from the file (frontmatter > first heading).
     // {
-    //   path: 'epigraph.md',
+    //     //   path: 'epigraph.md',
     //   title: 'Epigraph', // title can be overwritten (entry > file),
     //   theme: '@vivliostyle/theme-whatever', // theme can be set individually. default to the root `theme`.
     // },
@@ -21,7 +21,7 @@ module.exports = {
   //     format: 'webpub',
   //   },
   // ],
-  // workspaceDir: '.vivliostyle', // directory which is saved intermediate files.
+  workspaceDir: '.vivliostyle', // 一時ファイルの保存場所
   // toc: true, // whether generate and include ToC HTML or not, default to 'false'.
   // cover: './cover.png', // cover image. default to undefined.
   // vfm: { // options of VFM processor

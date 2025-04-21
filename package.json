@@ -1,0 +1,15 @@
+{
+  "name": "my-report-template",
+  "description": "my-report-template",
+  "version": "0.0.0",
+  "author": "yas-ako <105139975+yas-ako@users.noreply.github.com>",
+  "scripts": {
+    "build": "vivliostyle build",
+    "preview": "vivliostyle preview"
+  },
+  "dependencies": {
+    "@vivliostyle/cli": "latest"
+  },
+  "license": "MIT",
+  "private": true
+}

@@ -20,4 +20,12 @@
     "editor.suggest.insertMode": "replace",
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*",
+        "cmd": "npm run build"
+      }
+    ]
+  }
 }

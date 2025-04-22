@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "vivliostyle build"
+		},
+		{
+			"type": "npm",
+			"script": "preview",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: preview",
+			"detail": "viviliostyle preview"
+		}
+	]
+}

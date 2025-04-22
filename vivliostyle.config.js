@@ -3,7 +3,7 @@ module.exports = {
   author: "yas-ako <105139975+yas-ako@users.noreply.github.com>", // default to `author` in `package.json` or undefined.
   language: "ja", // default to undefined.
   size: "A4", // paper size.
-  theme: ["@vivliostyle/theme-academic@^2.0.0", "my-report-theme.css"],
+  theme: ["@vivliostyle/theme-academic@^2.0.0", "theme/my-report-theme.css"],
   entry: [
     "manuscript.md", // `title` is automatically guessed from the file (frontmatter > first heading).
     // {
@@ -16,7 +16,7 @@ module.exports = {
   // entryContext: './manuscripts', // default to '.' (relative to `vivliostyle.config.js`).
   output: [
     // path to generate draft file(s). default to '{title}.pdf'
-    "./output.pdf", // the output format will be inferred from the name.
+    "./output/output.pdf", // the output format will be inferred from the name.
     //   {
     //     path: './book',
     //     format: 'webpub',

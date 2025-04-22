@@ -41,6 +41,7 @@ h2 {
   margin-inline: var(--vs-theme--frame-margin-inline);
   padding: var(--vs-theme--frame-padding);
   position: relative;
+  break-inside: avoid;
 
   /* 定理環境のカウンタを一つ上げる */
   counter-increment: theorem;

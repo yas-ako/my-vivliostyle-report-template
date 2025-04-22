@@ -1,0 +1,94 @@
+:root {
+  /* 見出しのフォント */
+  --vs--heading-font-family: "Noto Sans JP";
+  --vs--heading-font-weight: 700;
+
+  /* 太字のフォント */
+  --vs--bold-font-family: "Noto Sans JP";
+  --vs-font-weight-bold: 500;
+
+  /* 本文のフォント */
+  --vs-font-family: "Noto Serif JP";
+
+  /* 等幅のフォント */
+  --vs--monospace-font-family:
+    Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "ＭＳ ゴシック", monospace;
+
+  /* ページ左上の内容を表示しないときはコメントアウトを外す */
+  /* --vs-page--mbox-content-top-left: none; */
+}
+
+/* 執筆者名の文字を大きくする */
+.author {
+  font-size: large;
+}
+
+/* 数式と定理のカウンタをリセット */
+h2 {
+  counter-reset: equation theorem;
+}
+
+.theorem {
+  --vs--blockquote-margin-block: 0;
+  --vs--blockquote-margin-inline: 0;
+  --vs--figure-margin-block: 0;
+  --vs--figure-margin-inline: 0;
+  --vs--pre-margin-block: 0;
+  --vs--pre-margin-inline: 0;
+  border: var(--vs-theme--frame-border);
+  box-decoration-break: var(--vs-theme--frame-box-decoration-break);
+  margin-block: var(--vs-theme--frame-margin-block);
+  margin-inline: var(--vs-theme--frame-margin-inline);
+  padding: var(--vs-theme--frame-padding);
+  position: relative;
+
+  /* 定理環境のカウンタを一つ上げる */
+  counter-increment: theorem;
+}
+
+.theorem-heading {
+  position: absolute;
+  top: -18px;
+  left: 10px;
+  background-color: white;
+  padding: 5px 10px;
+  font-family: var(--vs--heading-font-family);
+}
+
+.theorem-heading::before {
+  /* 定理環境のカウンタを使うときはコメントアウトを外す */
+  content: "例 " counter(vs-counter-sec-h2) "." counter(theorem) ". ";
+}
+
+/* .theorem-content { */
+/* 中身のスタイル */
+/* } */
+
+.equation {
+  position: relative;
+  padding-right: 2em;
+
+  counter-increment: equation;
+  /* 数式番号を1上げる */
+}
+
+.equation::after {
+  /* 数式番号を表示 */
+  content: "(" counter(vs-counter-sec-h2) "." counter(equation) ")";
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  /* 垂直方向に中央揃え */
+}
+
+/* hrで改ページ */
+
+hr.page-wrap {
+  break-before: page;
+  visibility: hidden;
+  margin: 0px;
+  padding: 0px;
+  height: 1px;
+}

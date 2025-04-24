@@ -16,6 +16,15 @@
 
   /* ページ左上の内容を表示しないときはコメントアウトを外す */
   /* --vs-page--mbox-content-top-left: none; */
+
+  /* 表の見出しの設定 */
+  --vs--th-font-weight: var(--vs-font-weight); /* 太字にしない */
+  --vs--th-font-family: var(--vs-font-family); /* ゴシック体でなく明朝体にする */
+}
+
+/* 一番左端の列の右に縦線を入れる */
+tr > :first-child {
+  border-inline-end-width: var(--vs--table-border-width);
 }
 
 /* 執筆者名の文字を大きくする */
@@ -75,6 +84,7 @@ h2 {
 
 .equation::after {
   /* 数式番号を表示 */
+  /* content: "(" counter(equation) ")"; */
   content: "(" counter(vs-counter-sec-h2) "." counter(equation) ")";
 
   position: absolute;
@@ -92,4 +102,22 @@ hr.page-wrap {
   margin: 0px;
   padding: 0px;
   height: 1px;
+}
+
+/* 画像を横に並べる用のコンテナ */
+/* ![Caption](path/file.png){.fig #fig-01 width=320} のように、横幅を指定する必要あり */
+.image-container {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.fig-ref::after {
+  content: "図" target-counter(attr(href url), vs-counter-fig);
+}
+
+a {
+  text-decoration: none;
 }

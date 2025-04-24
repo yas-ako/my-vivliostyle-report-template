@@ -12,7 +12,8 @@
 
   /* 等幅のフォント */
   --vs--monospace-font-family:
-    Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "ＭＳ ゴシック", monospace;
+    Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "源ノ角ゴシック Code JP", "ＭＳ ゴシック",
+    monospace;
 
   /* ページ左上の内容を表示しないときはコメントアウトを外す */
   /* --vs-page--mbox-content-top-left: none; */

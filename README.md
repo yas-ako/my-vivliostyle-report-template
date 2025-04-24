@@ -9,21 +9,43 @@
 作者：理工系大学一年生
 対象：大学の物理・数学・化学などのレポート
 
+## 使い方（準備中）
+
+- 使用しているフォント
+  - Noto Sans JP
+    - https://fonts.google.com/noto/specimen/Noto+Sans+JP
+  - Noto Serif JP
+    - https://fonts.google.com/noto/specimen/Noto+Serif+JP
+  - 源ノ角ゴシック Code JP
+    - https://github.com/adobe-fonts/source-han-code-jp/blob/master/README-JP.md
+- VSCode 拡張機能
+  - Run On Save
+    - https://marketplace.visualstudio.com/items/?itemName=emeraldwalk.RunOnSave
+
 ## 目指すもの（未完成）
 
 - 使用できる状態にするために
-  - [ ] フォント
+  - [x] フォント
+    - 大体完了
   - [ ] 文字サイズ
   - [ ] ヘッダー
-  - [ ] ページ番号
+  - [x] ページ番号
+    - [ ] 左右の端に寄せることもできるようにしたい
 - 数式
-  - [ ] 数式番号を振る
-    - [ ] いつかは自動で振りたい
+  - [x] 数式番号を振る
+    - おそらく問題なし
 - 枠
   - [ ] 数式とか定義とかの枠
-  - [ ] 見出しのありなしを両方とも
+  - [x] 見出しのありなしを両方とも
+    - たぶん完成した
 - [ ] 改ページ
 - [ ] 図表の挿入
+- [ ] コードブロック
+  - [ ] コードブロックらしく見た目を整える
+- 執筆環境
+  - [x] 保存のたびにPDFを生成
+    - `settings.json`に設定した
+    - VSCodeの拡張機能`Run On Save`が必要
 
 ## 参考資料
 

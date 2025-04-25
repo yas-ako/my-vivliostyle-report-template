@@ -1,12 +1,9 @@
 # タイトル
 
-<!-- <h1>期末レポート</h1> -->
+
 
 <div class="author">
 
-<!--講義-->
-<!-- - クラス：L  -->
-<!--演習-->
 
 - クラス：l
 - 学籍番号：123ABC
@@ -14,25 +11,24 @@
 
 </div>
 
-## あいう
+## いろいろと試す
 
-### 枠囲い
+### シンタックスハイライト
 
-```html test.html
+ちゃんとできる。カスタマイズも楽。
+
+```html title=test.html
 <div class="theorem">
-<div class="theorem-heading"></div>
+  <div class="theorem-heading"></div>
 
 数列 $\{a_k\}$ について考える。
 
 </div>
 ```
 
-<div class="theorem">
-<div class="theorem-heading"></div>
+インラインのコードは `こんな感じ、aiueo`になる
 
-数列 $\{a_k\}$ について考える。
-
-</div>
+  ### 囲み枠
 
 <div class="theorem">
 <div class="theorem-heading"></div>
@@ -48,7 +44,16 @@
 
 </div>
 
-### 枠囲い続き
+<div class="theorem">
+<div class="theorem-heading"></div>
+
+数列 $\{a_k\}$ について考える。
+
+</div>
+
+ちゃんと番号がインクリメントされている。
+
+### 囲み枠続き
 
 <div class="theorem">
 <div class="theorem-heading"></div>
@@ -114,6 +119,8 @@ $$
 </div>
 
 ## 段落２
+
+章をまたぐと、数式や「例」の番号がリセットされる。
 
 <div class="theorem">
 <div class="theorem-heading"></div>

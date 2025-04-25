@@ -1,3 +1,12 @@
+/* css変数を用いてシンタックスハイライトの設定ができるようにする base.css */
+@import url(../themes/packages/@vivliostyle/theme-base/css/lib/prism/base.css);
+
+/* okaidia テーマを使うときはコメントアウトを外す */
+/* @import url(../themes/packages/@vivliostyle/theme-base/css/lib/prism/theme-okaidia.css); */
+
+/* デフォルトのテーマを使うときはコメントアウトを外す */
+@import url(../themes/packages/@vivliostyle/theme-base/css/lib/prism/theme-prism.css);
+
 :root {
   /* 見出しのフォント */
   --vs--heading-font-family: "Noto Sans JP";

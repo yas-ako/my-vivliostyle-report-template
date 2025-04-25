@@ -33,6 +33,23 @@ tr > :first-child {
   font-size: large;
 } */
 
+/* pre コードブロック */
+pre {
+  --vs--blockquote-margin-block: 0;
+  --vs--blockquote-margin-inline: 0;
+  --vs--figure-margin-block: 0;
+  --vs--figure-margin-inline: 0;
+  --vs--pre-margin-block: 0;
+  --vs--pre-margin-inline: 0;
+  border: var(--vs-theme--frame-border);
+  box-decoration-break: var(--vs-theme--frame-box-decoration-break);
+  margin-block: var(--vs-theme--frame-margin-block);
+  margin-inline: var(--vs-theme--frame-margin-inline);
+  padding: var(--vs-theme--frame-padding);
+  position: relative;
+  break-inside: avoid;
+}
+
 /* 数式と定理のカウンタをリセット */
 h2 {
   counter-reset: equation theorem;

@@ -12,7 +12,9 @@
 
 ## サンプル
 
-[output.pdf](./output/output.pdf)
+- [台本(manuscript.md)](./manuscript.md)
+- [PDF(output.pdf)](./output/output.pdf)
+- [スタイルシート](./theme/my-report-theme.css)
 
 ## 使い方（準備中）
 

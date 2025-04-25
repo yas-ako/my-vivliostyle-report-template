@@ -18,6 +18,15 @@
 
 ### 枠囲い
 
+```html test.html
+<div class="theorem">
+<div class="theorem-heading"></div>
+
+数列 $\{a_k\}$ について考える。
+
+</div>
+```
+
 <div class="theorem">
 <div class="theorem-heading"></div>
 
@@ -92,7 +101,7 @@ $$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \cdots + a_n$$
   - 別の場所で`「[](#fig-Cu){.fig-ref}」`と書けば、「[](#fig-Cu){.fig-ref}」のように呼び出せる
     - `.fig-ref`は、このリポジトリで定義してある
     - 図に振ったidを、aタグを介して取得しているらしい
-    - 図の番号は自動で変更される
+    - 図の番号は自動で挿入される
 
 ### 番号付き数式続き
 

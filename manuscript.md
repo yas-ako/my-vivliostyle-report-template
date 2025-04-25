@@ -18,19 +18,18 @@
 
 ### 枠囲い
 
-```html test.html
+```html
 <div class="theorem">
-<div class="theorem-heading"></div>
+  <div class="theorem-heading"></div>
 
-数列 $\{a_k\}$ について考える。
-
+  数列 $\{a_k\}$ について考える。
 </div>
 ```
 
 <div class="theorem">
 <div class="theorem-heading"></div>
 
-数列 $\{a_k\}$ について考える。
+数列 $\{a_k\}$ について考える。インラインコードは `こんな感じaiueo` に表示される。
 
 </div>
 

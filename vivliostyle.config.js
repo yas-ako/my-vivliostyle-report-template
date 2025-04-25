@@ -1,3 +1,14 @@
+// import "@shikijs/rehype";
+
+const VFM = require("@vivliostyle/vfm");
+const rehypeRaw = require("rehype-raw");
+// const rehypeShiki = require(
+// "@shikijs/rehype");
+
+// import "@vivliostyle/vfm";
+const rehypeShiki = require("@shikijs/rehype");
+
+/** @type {import('@vivliostyle/cli').VivliostyleConfigSchema} */
 module.exports = {
   title: "my-report-template", // populated into `publication.json`, default to `title` of the first entry or `name` in `package.json`.
   author: "yas-ako <105139975+yas-ako@users.noreply.github.com>", // default to `author` in `package.json` or undefined.
@@ -29,4 +40,19 @@ module.exports = {
   //   hardLineBreaks: true, // converts line breaks of VFM to <br> tags. default to 'false'.
   //   disableFormatHtml: true, // disables HTML formatting. default to 'false'.
   // },
+  vfm: {
+    // 例: code caption を有効化
+    code: { caption: true },
+  },
+  remarkRehypeOptions: {
+    allowDangerousHtml: true,
+  },
+  rehypePlugins: [
+    // シングルテーマ指定
+    [rehypeShiki, { theme: "github-light" }],
+    // 複数テーマ対応例
+    // [rehypeShiki, { themes: { light: 'github-light', dark: 'nord' } }]
+  ],
+
+  // VFM(config, metadata).use(rehypeShiki, { theme: "github-light" }),
 };

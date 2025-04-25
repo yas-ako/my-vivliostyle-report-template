@@ -8,7 +8,9 @@
     "preview": "vivliostyle preview"
   },
   "dependencies": {
-    "@vivliostyle/cli": "latest"
+    "@shikijs/rehype": "^3.3.0",
+    "@vivliostyle/cli": "latest",
+    "shiki": "^3.3.0"
   },
   "license": "MIT",
   "private": true

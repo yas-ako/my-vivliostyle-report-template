@@ -8,6 +8,7 @@
 @import url(../themes/packages/@vivliostyle/theme-base/css/lib/prism/theme-prism.css);
 
 :root {
+  /****** フォント ******/
   /* 見出しのフォント */
   --vs--heading-font-family: "Noto Sans JP";
   --vs--heading-font-weight: 700;
@@ -24,45 +25,43 @@
     Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "源ノ角ゴシック Code JP", "ＭＳ ゴシック",
     monospace;
 
-  /* ページ左上の内容を表示しないときはコメントアウトを外す */
+  /****** ページの設定 ******/
+  /*
+  ページ左上に内容を表示しないときは、次の行のコメントアウトを外す。
+  none ではなく別の値を設定することもできる。
+  */
   /* --vs-page--mbox-content-top-left: none; */
+  /* --vs-page--mbox-content-top-left: "ここにテキスト"; */
 
-  /* 表の見出しの設定 */
-  --vs--th-font-weight: var(--vs-font-weight); /* 太字にしない */
-  --vs--th-font-family: var(--vs-font-family); /* ゴシック体でなく明朝体にする */
+  /****** 表の見出しの設定 ******/
+  /* 太字にしない */
+  --vs--th-font-weight: var(--vs-font-weight);
+
+  /* ゴシック体でなく明朝体にする */
+  --vs--th-font-family: var(--vs-font-family);
 }
 
-/* 一番左端の列の右に縦線を入れる */
+/****** 表の罫線の設定 ******/
+/*一番左端の列の右に縦線を入れる */
 tr > :first-child {
   border-inline-end-width: var(--vs--table-border-width);
 }
 
-/* 執筆者名の文字を大きくする */
+/****** 執筆者の設定 ******/
 /* .author {
   font-size: large;
 } */
 
-/* pre コードブロック */
-/* pre {
-  --vs--blockquote-margin-block: 0;
-  --vs--blockquote-margin-inline: 0;
-  --vs--figure-margin-block: 0;
-  --vs--figure-margin-inline: 0;
-  --vs--pre-margin-block: 0;
-  --vs--pre-margin-inline: 0;
-  border: var(--vs-theme--frame-border);
-  box-decoration-break: var(--vs-theme--frame-box-decoration-break);
-  margin-block: var(--vs-theme--frame-margin-block);
-  margin-inline: var(--vs-theme--frame-margin-inline);
-  padding: var(--vs-theme--frame-padding);
-  position: relative;
-  break-inside: avoid;
-} */
-
-/* 数式と定理のカウンタをリセット */
+/****** カウンタのリセット ******/
 h2 {
+  /* 数式と定理のカウンタ */
   counter-reset: equation theorem;
 }
+
+/****** 定理・定義・例などのためのカウンタ ******/
+/*
+複製して名前を変更すれば、複数の枠を作ることができる。
+*/
 
 .theorem {
   --vs--blockquote-margin-block: 0;
@@ -83,6 +82,7 @@ h2 {
   counter-increment: theorem;
 }
 
+/* 見出し*/
 .theorem-heading {
   position: absolute;
   top: -18px;
@@ -92,36 +92,61 @@ h2 {
   font-family: var(--vs--heading-font-family);
 }
 
+/* 見出しに表示するカウンタ */
 .theorem-heading::before {
-  /* 定理環境のカウンタを使うときはコメントアウトを外す */
+  /* 定理環境のカウンタを使うときは、次の行のコメントアウトを外す */
   content: "例 " counter(vs-counter-sec-h2) "." counter(theorem) ". ";
 }
 
-/* .theorem-content { */
-/* 中身のスタイル */
-/* } */
+/****** カウントされる数式 ******/
+/*
+  数式に自動で番号を振る
+  $$~$$ で囲まれた数式は、
+  自動で<span class="math display"></span> となるため
+  特別に何かをする必要はない。
+  数式を子要素に持つp要素で、カウンタを増加させる
+  */
 
-.equation {
+p:has(span.math.display) {
   position: relative;
   padding-right: 2em;
 
+  /* カウンタを増加 */
   counter-increment: equation;
-  /* 数式番号を1上げる */
 }
 
-.equation::after {
-  /* 数式番号を表示 */
+p:has(span.math.display)::after {
+  /* 数式番号 */
+
+  /* (2) のように、番号のみを表示する場合は次のコメントアウトを外す */
   /* content: "(" counter(equation) ")"; */
+
+  /* (1.4) のように、h2 の番号と数式番号をピリオドでつなげて表示する場合は次のコメントアウトを外す */
   content: "(" counter(vs-counter-sec-h2) "." counter(equation) ")";
 
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  /* 垂直方向に中央揃え */
 }
 
-/* hrで改ページ */
+/****** カウントしない数式 ******/
+/*
+  `<div class="no-eqation-counter"></div>` の内側に
+  数式を入れることで、数式番号を表示しないようにする。
+  数式番号は増加させない。
+  */
+
+.no-eqation-counter p:has(span.math.display) {
+  counter-increment: none;
+}
+
+.no-eqation-counter p:has(span.math.display)::after {
+  content: none;
+}
+
+/****** 改ページ ******/
+/* <hr class="page-wrap></hr> で改ページ */
 
 hr.page-wrap {
   break-before: page;
@@ -131,8 +156,13 @@ hr.page-wrap {
   height: 1px;
 }
 
-/* 画像を横に並べる用のコンテナ */
-/* ![Caption](path/file.png){.fig #fig-01 width=320} のように、横幅を指定する必要あり */
+/****** 画像を横に並べる用のコンテナ ******/
+/*
+  flex を使って横に並べているだけ。
+  ![Caption](path/file.png){.fig #fig-01 width=320} のように、
+  画像の横幅を指定しないとページからはみ出す。
+  */
+
 .image-container {
   margin: auto;
   width: 100%;
@@ -141,9 +171,24 @@ hr.page-wrap {
   flex-direction: row;
 }
 
+/****** 図表の参照 ******/
+/*
+  [](#図のid){.fig-ref} のように書くことで、
+  図表を参照することができる
+  */
 .fig-ref::after {
   content: "図" target-counter(attr(href url), vs-counter-fig);
 }
+
+.tbl-ref::after {
+  content: "表" target-counter(attr(href url), vs-counter-tbl);
+}
+
+/*
+  aタグの下線を消す。
+  図表の参照は、aタグを使用している。
+  デフォルトの設定のままだと、図表番号に下線が引かれてしまう。
+  */
 
 a {
   text-decoration: none;

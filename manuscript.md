@@ -1,9 +1,6 @@
 # タイトル
 
-
-
 <div class="author">
-
 
 - クラス：l
 - 学籍番号：123ABC
@@ -21,14 +18,13 @@
 <div class="theorem">
   <div class="theorem-heading"></div>
 
-数列 $\{a_k\}$ について考える。
-
+  数列 $\{a_k\}$ について考える。
 </div>
 ```
 
 インラインのコードは `こんな感じ、aiueo`になる
 
-  ### 囲み枠
+### 囲み枠
 
 <div class="theorem">
 <div class="theorem-heading"></div>
@@ -64,15 +60,28 @@
 
 ### 番号付き数式
 
-<div class="equation">
+`$$~$$`ではさまれた部分に $\mathrm{\LaTeX}$ で使用される数式を書くことができる。自動で数式番号が付与される。`h2`レベルの見出しごとに、カウンタがリセットされる。
+数式番号の参照はまだ実現できていない。
+こちら^[https://gihyo.jp/article/2025/02/vivliostyle-05-2#ghd7AWAtwX] にある方法を用いると、数式の前後にタグを入れなければならず、面倒である。
+
+```tex title=texのサンプル
+$$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \cdots + a_n$$
+$$(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k$$
+$$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta$$
+$C$を積分定数として
+$$\int x^n dx = \frac{1}{n+1} x^{n+1} + C \quad (n \neq -1)$$
+```
 
 $$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \cdots + a_n$$
-
-</div>
+$$(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k$$
+$$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta$$
+$C$を積分定数として
+$$\int x^n dx = \frac{1}{n+1} x^{n+1} + C \quad (n \neq -1)$$
 
 ### 表のサンプル
 
-表と図の区別は、`<figure>`要素のどこに`<figcaption>`要素があるのか
+`<figure>`要素のどこに`<figcaption>`要素があるのかを用いて、表と図を区別する。
+こちら^[https://gihyo.jp/article/2025/02/vivliostyle-05-2#gh2Xq8vaNb] と こちら^[https://gihyo.jp/article/2025/02/vivliostyle-05#ghfbEpozht] を参照すること。
 
 - 一つ目の場合：表として扱われる
 - 一番最後の場合：図として扱われる
@@ -111,15 +120,35 @@ $$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \cdots + a_n$$
     - 図に振ったidを、aタグを介して取得しているらしい
     - 図の番号は自動で挿入される
 
-### 番号付き数式続き
+### 番号付き数式の続き
 
-<div class="equation">
+h3の見出しが変わっても、数式番号はそのままになっている。
 
 $$
-\sum_{k=1}^{5} k^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+$$
+
+$$
+e^{i\pi} + 1 = 0
+$$
+
+### 番号無し数式
+
+`<div class="no-eqation-counter"></div>` で囲うことで、その中にある数式には数式番号を表示させないようにできる。このとき、数式番号は増加しない。
+
+<div class="no-eqation-counter">
+
+$$
+\frac{\pi}{4} = \sum_{n=0}^\infty \frac{(-1)^n}{2n+1}
 $$
 
 </div>
+
+次の数式は、`<div class="no-eqation-counter"></div>` で囲んでいないので、番号が表示される。
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
 
 ## 段落２
 
@@ -128,14 +157,12 @@ $$
 <div class="theorem">
 <div class="theorem-heading"></div>
 
-数列 $\{a_k\}$ について考える。
-
-</div>
-
-<div class="equation">
+マクスウェル方程式のうち、ファラデーの誘導法則（微分形）について考えてみよう。
 
 $$
-\sum_{k=1}^{5} k^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55
+\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
 $$
+
+もちろん、枠の中に数式を入れることだってできる。
 
 </div>

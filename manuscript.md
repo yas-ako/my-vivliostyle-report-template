@@ -56,18 +56,31 @@ https://gihyo.jp/article/2025/02/vivliostyle-05-2#ghd7AWAtwX にある方法を�
 
 ```tex title=texのサンプル
 $$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \cdots + a_n$$
+
 $$(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k$$
+
 $$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta$$
+
 $C$を積分定数として
+
+<!--改行をなくすと、隣り合った数式が一つの数式とみなされる-->
 $$\int x^n dx = \frac{1}{n+1} x^{n+1} + C \quad (n \neq -1)$$
+$$\int \frac{1}{x} dx = \log|x| + C$$
+
 ```
 
 $$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \cdots + a_n$$
-$$(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k$$
-$$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta$$
-$C$を積分定数として
-$$\int x^n dx = \frac{1}{n+1} x^{n+1} + C \quad (n \neq -1)$$
 
+$$(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k$$
+
+$$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta$$
+
+$C$を積分定数として
+
+<!--改行をなくすと、隣り合った数式が一つの数式とみなされる-->
+
+$$\int x^n dx = \frac{1}{n+1} x^{n+1} + C \quad (n \neq -1)$$
+$$\int \frac{1}{x} dx = \log|x| + C$$
 
 ### 表のサンプル
 

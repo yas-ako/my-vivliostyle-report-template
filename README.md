@@ -76,3 +76,85 @@ chore: ビルド・補助ツール、ライブラリ等
 - Awesome Vivliostyle <https://github.com/vivliostyle/awesome-vivliostyle#readme>
 - Vivliostyle (GitHub) <https://github.com/vivliostyle>
 - Vivliostyle <https://vivliostyle.org>
+
+### ファイル構成
+
+```
+├── .gitignore
+├── .prettierrc     Prettier の設定ファイル
+├── .vivliostyle     Vivliostyleが出力した一時ファイルの保存フォルダ
+│   │                 gitで追跡しない
+│   ├── assets
+│   │   └── 1_銅線.png
+│   ├── manuscript.html
+│   ├── publication.json
+│   ├── theme     自分で作ったテーマがコピーされるフォルダ
+│   │   ├── my-prism-theme.css
+│   │   └── my-report-theme.css
+│   └── themes     インストールしたテーマがコピーされるフォルダ
+│       ├── package-lock.json
+│       ├── package.json
+│       └── packages
+│           ├── .package-lock.json
+│           └── @vivliostyle
+│               ├── theme-academic
+│               │   ├── CHANGELOG.md
+│               │   ├── LICENSE
+│               │   ├── README.md
+│               │   ├── example
+│               │   │   ├── fet.html
+│               │   │   ├── fet.md
+│               │   │   ├── microcomputer.html
+│               │   │   └── microcomputer.md
+│               │   ├── package.json
+│               │   ├── theme.css
+│               │   └── vivliostyle.config.js
+│               └── theme-base
+│                   ├── CHANGELOG.md
+│                   ├── LICENSE
+│                   ├── README.md
+│                   ├── css
+│                   │   ├── common
+│                   │   │   ├── basic.css
+│                   │   │   ├── meta-properties.css
+│                   │   │   └── reset.css
+│                   │   ├── lib
+│                   │   │   └── prism
+│                   │   │       ├── base.css
+│                   │   │       ├── theme-okaidia.css
+│                   │   │       └── theme-prism.css
+│                   │   └── partial
+│                   │       ├── crossref.css
+│                   │       ├── endnote.css
+│                   │       ├── footnote-external-link.css
+│                   │       ├── footnote.css
+│                   │       ├── page.css
+│                   │       ├── section.css
+│                   │       ├── toc.css
+│                   │       └── utility-classes.css
+│                   ├── example
+│                   │   ├── assets
+│                   │   │   └── Logo (Mark + Type).png
+│                   │   ├── default.html
+│                   │   └── default.md
+│                   ├── package.json
+│                   ├── theme-all.css
+│                   ├── theme-basic.css
+│                   └── vivliostyle.config.js
+├── .vscode     VSCodeの設定ファイル
+│   ├── settings.json
+│   └── tasks.json
+├── LICENSE
+├── README.md     このファイル
+├── assets     画像置き場
+│   └── 1_銅線.png
+├── manuscript.md     原稿
+├── output     生成したPDFが保存されるフォルダ
+│   └── output.pdf
+├── package-lock.json
+├── package.json
+├── theme     自分で定義するテーマを保存するフォルダ
+│   ├── my-prism-theme.css
+│   └── my-report-theme.css
+└── vivliostyle.config.js     設定ファイル
+```

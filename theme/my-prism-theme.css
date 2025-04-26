@@ -24,12 +24,12 @@ figure[class*="language-"] > figcaption {
   font-family: var(--vs--monospace-font-family);
 }
 
-/* コードブロック(枠) */
+/* コードブロック */
 pre[class*="language-"] {
   padding-block: 0;
   padding-inline-start: 0.3em;
-  background-color: #fdfdfd;
-  background-image: linear-gradient(#f5f2f0 50%, transparent 50%);
+  background-color: #fff;
+  background-image: linear-gradient(#efefef6e 50%, #fff 50%);
   line-height: 1.5em;
   background-size: 3em 3em;
   background-origin: content-box;

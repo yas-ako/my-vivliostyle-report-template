@@ -22,6 +22,17 @@
 </div>
 ```
 
+````title=コードブロック
+```html title=testあああ.html
+<div class="theorem">
+  <div class="theorem-heading"></div>
+
+  数列 $\{a_k\}$ について考える。
+</div>
+```
+
+````
+
 インラインのコードは `こんな感じ、aiueo`になる
 
 ### 数式
@@ -64,6 +75,8 @@ $$\int x^n dx = \frac{1}{n+1} x^{n+1} + C \quad (n \neq -1)$$
 
 - https://gihyo.jp/article/2025/02/vivliostyle-05-2#gh2Xq8vaNb
 - https://gihyo.jp/article/2025/02/vivliostyle-05#ghfbEpozht
+
+MarkdownのなかにHTMLを使用する際、空行が必要なことに注意する。
 
 ```md title=表のサンプル
 <figure class="table">

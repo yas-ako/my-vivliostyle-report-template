@@ -193,3 +193,16 @@ hr.page-wrap {
 a {
   text-decoration: none;
 }
+
+/****** 脚注の設定 ******/
+@media print {
+  /* URL に対して自動生成された脚注表記を非表示にする */
+  :not(.footnote) > a[href^="http"]::before {
+    display: none;
+  }
+
+  :not(.footnote) > a[href^="http"]::after {
+    /* URL の後ろに付与された脚注番号を非表示にする */
+    display: none;
+  }
+}

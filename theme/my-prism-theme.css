@@ -1,0 +1,51 @@
+:root {
+  /* --vs-prism--background: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%); */
+
+  --vs-prism--inline-code-padding: 0.3em;
+
+  /* --vs--pre-margin-block: 0; */
+
+  /* --vs-prism--block-code-padding: 1em; */
+}
+
+/* コードブロックの見出し */
+figure[class*="language-"] > figcaption {
+  font-size: 110%;
+  line-height: 1.4em;
+  border: #888 1px solid;
+  color: #fff;
+  background-color: #888;
+  /* border-bottom: none; */
+  text-align: left;
+  margin: 0 auto 0 0;
+  border-radius: var(--vs-prism--block-code-border-radius) var(--vs-prism--block-code-border-radius)
+    0 0;
+  padding: 0.3em 1.5em 0.1em;
+  font-family: var(--vs--monospace-font-family);
+}
+
+/* コードブロック(枠) */
+pre[class*="language-"] {
+  padding-block: 0;
+  padding-inline-start: 0.3em;
+  background-color: #fdfdfd;
+  background-image: linear-gradient(#f5f2f0 50%, transparent 50%);
+  line-height: 1.5em;
+  background-size: 3em 3em;
+  background-origin: content-box;
+  background-attachment: local;
+  width: 100%;
+  border: 1px solid #888;
+}
+
+figcaption + pre[class*="language-"] {
+  border-radius: 0 var(--vs-prism--block-code-border-radius)
+    var(--vs-prism--block-code-border-radius) var(--vs-prism--block-code-border-radius);
+  margin-block: 0;
+}
+
+/* インラインコード */
+:not(pre) > code {
+  border: 1px solid #888;
+  margin-inline: 0.2em;
+}

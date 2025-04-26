@@ -3,7 +3,11 @@ module.exports = {
   author: "yas-ako <105139975+yas-ako@users.noreply.github.com>", // default to `author` in `package.json` or undefined.
   language: "ja", // default to undefined.
   size: "A4", // paper size.
-  theme: ["@vivliostyle/theme-academic@^2.0.0", "theme/my-report-theme.css"],
+  theme: [
+    "@vivliostyle/theme-academic@^2.0.0",
+    "theme/my-report-theme.css",
+    "theme/my-prism-theme.css",
+  ],
   entry: [
     "manuscript.md", // `title` is automatically guessed from the file (frontmatter > first heading).
     // {

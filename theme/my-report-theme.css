@@ -39,6 +39,11 @@
 
   /* ゴシック体でなく明朝体にする */
   --vs--th-font-family: var(--vs-font-family);
+
+  /* カウンタのリセットに関するバグを修正 */
+  /* https://github.com/vivliostyle/themes/issues/138 */
+  --vs-section--root-counter-reset: vs-counter-sections var(--vs-section--root-counter-sections,)
+    vs-counter-sec-h1 var(--vs-section--root-counter-sec-h1,);
 }
 
 /****** 表の罫線の設定 ******/

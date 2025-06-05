@@ -28,6 +28,8 @@
 - VSCode 拡張機能
   - Run On Save
     - https://marketplace.visualstudio.com/items/?itemName=emeraldwalk.RunOnSave
+- GhostscriptとPopplerをインストール
+  - sudo apt-get install poppler-utils ghostscript
 
 ## 目指すもの（未完成）
 
